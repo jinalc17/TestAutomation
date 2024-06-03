@@ -12,3 +12,4 @@ C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\refint\eCommerc
 C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.pdb
 C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.genruntimeconfig.cache
 C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\ref\eCommerce.dll
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.sourcelink.json

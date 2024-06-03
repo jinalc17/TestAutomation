@@ -25,21 +25,17 @@ namespace eCommerce.Tests
         [Test]
         public void ProductName_SetNameToNull_ShouldThrowException()
         {
-            // Arrange
-            var product = new Product(6, "ProductName", 50, 500);
-
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => product.ProductName = null);
+            // Arrange, Act & Assert
+            var result = Assert.Throws<Exception>(() => new Product(6, null, 50, 500));
+            Assert.That(result.Message, Is.EqualTo("Product Name should not be null"));
         }
 
         [Test]
         public void ProductName_SetNameToEmpty_ShouldThrowException()
         {
-            // Arrange
-            var product = new Product(6, "ProductName", 50, 500);
-
-            // Act & Assert
-            Assert.Throws<ArgumentException>(() => product.ProductName = "");
+            // Arrange, Act & Assert
+            var result = Assert.Throws<Exception>(() => new Product(6, "", 50, 500));
+            Assert.That(result.Message, Is.EqualTo("Product Name should not be null"));
         }
 
         [Test]
@@ -263,7 +259,7 @@ namespace eCommerce.Tests
         }
 
         [Test]
-        public void IncreaseStock_ByValueTen_ShouldIncreaseStockByGivenAmount()
+        public void IncreaseStock_ByValueTen_ShouldIncreaseStockByTen()
         {
             // Arrange
             var product = new Product(500, "ProductName", 500, 500);
@@ -276,35 +272,31 @@ namespace eCommerce.Tests
             Assert.That(product.Stock, Is.EqualTo(510));
         }
         [Test]
-        public void IncreaseStock_ByValueZero_ShouldStaySame()
+        public void IncreaseStock_ByValueZero_ShouldThrowException()
         {
             // Arrange
             var product = new Product(500, "ProductName", 500, 500);
             int increaseAmount = 0;
 
-            // Act
-            product.IncreaseStock(increaseAmount);
-
-            // Assert
-            Assert.That(product.Stock, Is.EqualTo(500));
+            // Act & Assert
+            var result = Assert.Throws<Exception>(() => product.IncreaseStock(increaseAmount));
+            Assert.That(result.Message, Is.EqualTo("Invalid amount. Amount should be greater than 0"));
         }
 
         [Test]
-        public void IncreaseStock_MoreThanMaxCapacity_SetAsMaxLimit()
+        public void IncreaseStock_MoreThanMaxCapacity_ShouldThrowException()
         {
             // Arrange
             var product = new Product(500, "ProductName", 100, 500);
             int increaseAmount = 1000000000;
 
-            // Act
-            product.IncreaseStock(increaseAmount);
-
-            // Assert
-            Assert.That(product.Stock, Is.EqualTo(600000));
+            // Act & Assert
+            var result = Assert.Throws<Exception>(() => product.IncreaseStock(increaseAmount));
+            Assert.That(result.Message, Is.EqualTo("Stock Reached to more than Max Limits"));
         }
 
         [Test]
-        public void DecreaseStock_ByValueTen_ShouldDecreaseStockByGivenAmount()
+        public void DecreaseStock_ByValueTen_ShouldDecreaseStockByTen()
         {
             // Arrange
             var product = new Product(500, "ProductName", 500, 500);
@@ -318,31 +310,27 @@ namespace eCommerce.Tests
         }
 
         [Test]
-        public void DecreaseStock_ByValueZero_ShouldStaySame()
+        public void DecreaseStock_ByValueZero_ShouldThrowException()
         {
             // Arrange
             var product = new Product(500, "ProductName", 500, 500);
             int decreaseAmount = 0;
 
-            // Act
-            product.IncreaseStock(decreaseAmount);
-
-            // Assert
-            Assert.That(product.Stock, Is.EqualTo(500));
+            // Act & Assert
+            var result = Assert.Throws<Exception>(() => product.DecreaseStock(decreaseAmount));
+            Assert.That(result.Message, Is.EqualTo("Invalid amount. Amount should be greater than 0"));
         }
 
         [Test]
-        public void DecreaseStock_LessThanMinCapacity_SetAsMinLimit()
+        public void DecreaseStock_LessThanMinCapacity_ShouldThrowException()
         {
             // Arrange
             var product = new Product(500, "ProductName", 100, 500);
             int decreaseAmount = 1000000000;
 
-            // Act
-            product.DecreaseStock(decreaseAmount);
-
-            // Assert
-            Assert.That(product.Stock, Is.EqualTo(6));
+            // Act & Assert
+            var result = Assert.Throws<Exception>(() => product.DecreaseStock(decreaseAmount));
+            Assert.That(result.Message, Is.EqualTo("Stock Reached to less than Min Limits"));
         }
 
         [Test]
@@ -353,7 +341,8 @@ namespace eCommerce.Tests
             int increaseAmount = -10;
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => product.IncreaseStock(increaseAmount));
+            var result = Assert.Throws<Exception>(() => product.IncreaseStock(increaseAmount));
+            Assert.That(result.Message, Is.EqualTo("Invalid amount. Amount should be greater than 0"));
         }
 
         [Test]
@@ -364,7 +353,8 @@ namespace eCommerce.Tests
             int decreaseAmount = -10;
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => product.DecreaseStock(decreaseAmount));
+            var result = Assert.Throws<Exception>(() => product.DecreaseStock(decreaseAmount));
+            Assert.That(result.Message, Is.EqualTo("Invalid amount. Amount should be greater than 0"));
         }
 
     }

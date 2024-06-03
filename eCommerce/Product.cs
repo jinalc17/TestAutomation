@@ -15,6 +15,10 @@ namespace eCommerce
 
         public Product(int productId, string productName, decimal price, int stock)
         {
+            if(productName == null | productName == "")
+            {
+                throw new Exception("Product Name should not be null");
+            }
             ProductID = productId;
             ProductName = productName;
             Price = price;
@@ -23,21 +27,36 @@ namespace eCommerce
 
         public void IncreaseStock(int amount)
         {
-            Stock += amount;
+            
+            if (amount > 0)
+            {
+                Stock += amount;
+            }
+            else
+            {
+                throw new Exception("Invalid amount. Amount should be greater than 0");
+            }
 
             if (Stock > 600000)
             {
-                Stock = 600000;
+                throw new Exception("Stock Reached to more than Max Limits");
             }
 
         }
 
         public void DecreaseStock(int amount)
         {
-            Stock -= amount;
+            if (amount > 0)
+            {
+                Stock -= amount;
+            }
+            else
+            {
+                throw new Exception("Invalid amount. Amount should be greater than 0");
+            }
             if (Stock < 6)
             {
-                Stock = 6;
+                throw new Exception("Stock Reached to less than Min Limits");
             }
 
         }

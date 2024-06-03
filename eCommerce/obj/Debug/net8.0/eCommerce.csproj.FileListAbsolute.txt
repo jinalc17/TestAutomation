@@ -1,0 +1,14 @@
+C:\Users\jinal\source\repos\eCommerce\eCommerce\bin\Debug\net8.0\eCommerce.exe
+C:\Users\jinal\source\repos\eCommerce\eCommerce\bin\Debug\net8.0\eCommerce.deps.json
+C:\Users\jinal\source\repos\eCommerce\eCommerce\bin\Debug\net8.0\eCommerce.runtimeconfig.json
+C:\Users\jinal\source\repos\eCommerce\eCommerce\bin\Debug\net8.0\eCommerce.dll
+C:\Users\jinal\source\repos\eCommerce\eCommerce\bin\Debug\net8.0\eCommerce.pdb
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.AssemblyInfoInputs.cache
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.AssemblyInfo.cs
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.csproj.CoreCompileInputs.cache
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.dll
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\refint\eCommerce.dll
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.pdb
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\eCommerce.genruntimeconfig.cache
+C:\Users\jinal\source\repos\eCommerce\eCommerce\obj\Debug\net8.0\ref\eCommerce.dll
